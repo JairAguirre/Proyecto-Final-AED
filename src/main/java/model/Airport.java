@@ -10,9 +10,9 @@ public class Airport {
 	
 	public Airport() {
 		
-		avianca = new Airline("Avianca", "link", 4);
-		CopaAirlines = new Airline("CopaAirlines", "link", 4);
-		LATAM = new Airline("name", "link", 4);
+		avianca = new Airline("Avianca", "link", 22);
+		CopaAirlines = new Airline("CopaAirlines", "link", 8);
+		LATAM = new Airline("LATAM", "link", 14);
 		
 		addCities();
 		addEdgesKm();
