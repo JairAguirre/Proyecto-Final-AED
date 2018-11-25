@@ -55,7 +55,22 @@ public class Airport {
 		CopaAirlines.addCity(new City("San Andrés"));
 		CopaAirlines.addCity(new City("Pereira"));
 		
-		//
+		//LATAM
+		
+		LATAM.addCity(new City("Medellín"));
+		LATAM.addCity(new City("Barranquilla"));
+		LATAM.addCity(new City("Bogotá"));
+		LATAM.addCity(new City("Bucaramanga"));
+		LATAM.addCity(new City("Cali"));
+		LATAM.addCity(new City("Cartagena"));
+		LATAM.addCity(new City("Cúcuta"));
+		LATAM.addCity(new City("Montería"));
+		LATAM.addCity(new City("Pereira"));
+		LATAM.addCity(new City("San Andrés"));
+		LATAM.addCity(new City("Santa Marta"));
+		LATAM.addCity(new City("Valledupar"));
+		LATAM.addCity(new City("Yopal"));
+		LATAM.addCity(new City("Leticia"));
 		
 		
 	}
@@ -135,6 +150,33 @@ public class Airport {
 		
 
 		//LATAM
+		
+		LATAM.addEdge(new City("Bogotá"), new City("San Andrés"), 1204.95);
+		LATAM.addEdge(new City("Bogotá"), new City("Cali"), 279.23);
+		LATAM.addEdge(new City("Bogotá"), new City("Leticia"), 1089.04);
+		LATAM.addEdge(new City("Bogotá"), new City("Yopal"), 204);
+		LATAM.addEdge(new City("Bogotá"), new City("Bucaramanga"), 288.55);
+		LATAM.addEdge(new City("Bogotá"), new City("Cúcuta"),  400.01);
+		LATAM.addEdge(new City("Bogotá"), new City("Valledupar"), 641.77);
+		LATAM.addEdge(new City("Bogotá"), new City("Santa Marta"), 709.87);
+		LATAM.addEdge(new City("Bogotá"), new City("Barranquilla"), 687.92);
+		LATAM.addEdge(new City("Bogotá"), new City("Cartagena"), 652.53);
+		LATAM.addEdge(new City("Bogotá"), new City("Montería"), 492.19);
+		LATAM.addEdge(new City("Bogotá"), new City("Medellín"), 231.91);
+		LATAM.addEdge(new City("Bogotá"), new City("Pereira"), 177.1);
+		
+		LATAM.addEdge(new City("Cali"), new City("San Andrés"), 1166);
+		
+		LATAM.addEdge(new City("Santa Marta"), new City("Medellín"), 575);
+		
+		LATAM.addEdge(new City("San Andrés"), new City("Cartagena"), 716);
+		LATAM.addEdge(new City("San Andrés"), new City("Medellín"), 974);
+		LATAM.addEdge(new City("San Andrés"), new City("Cali"), 1166);
+		
+		LATAM.addEdge(new City("Cartagena"), new City("Medellín"), 461);
+		
+		LATAM.addEdge(new City("Medellín"), new City("San Andrés"), 974);
+	
 	}
 	
 	public void addEdgesP() {
