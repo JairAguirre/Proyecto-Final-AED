@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <TabPane prefHeight="745.0" prefWidth="910.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Avianca">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="715.0" prefWidth="910.0">
+                     <children>
+                        <ImageView fx:id="ImgAvianca" fitHeight="635.0" fitWidth="604.0" layoutX="14.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../Mapa%20Avianca.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="TitleAviancaTx" layoutX="141.0" layoutY="14.0" prefHeight="53.0" prefWidth="391.0" text="Avianca - Mapa de rutas" textAlignment="CENTER">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="Titulo2Avianca" layoutX="691.0" layoutY="60.0" prefHeight="27.0" prefWidth="150.0" text="Encontrar tiquetes">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="destinoAviancaTx" layoutX="710.0" layoutY="127.0" prefHeight="20.0" prefWidth="112.0" text="Destino de salida">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="SalidasAvianca" layoutX="691.0" layoutY="153.0" prefWidth="150.0" />
+                        <Label fx:id="llegadaAviancaTx" layoutX="705.0" layoutY="198.0" prefHeight="20.0" prefWidth="122.0" text="Destino de llegada">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="LlegadasAvianca" layoutX="691.0" layoutY="222.0" prefWidth="150.0" />
+                        <Label fx:id="tempAviancaTx" layoutX="731.0" layoutY="263.0" text="Temporada">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="TemporadaAvianca" layoutX="692.0" layoutY="283.0" prefWidth="150.0" />
+                        <Label fx:id="CriterioAviancaTx" layoutX="701.0" layoutY="332.0" prefHeight="20.0" prefWidth="133.0" text="Criterio de búsqueda">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="CriterioAvianca" layoutX="693.0" layoutY="352.0" prefWidth="150.0" />
+                        <Label fx:id="MejorAviancaTx" layoutX="688.0" layoutY="415.0" prefHeight="15.0" prefWidth="161.0" text="La mejor opción es:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TotalAviancaTx" layoutX="700.0" layoutY="496.0" prefHeight="27.0" prefWidth="137.0" text="Con un total de:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="ComprarAviancaBut" layoutX="726.0" layoutY="625.0" mnemonicParsing="false" text="Ir a comprar" />
+                        <Label fx:id="MejorOpcionAvianca" layoutX="707.0" layoutY="454.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Label fx:id="TotalAvianca" layoutX="710.0" layoutY="533.0" prefHeight="31.0" prefWidth="118.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Copa Airlines">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="715.0" prefWidth="910.0">
+                     <children>
+                        <ImageView fx:id="ImgCopa" fitHeight="635.0" fitWidth="604.0" layoutX="14.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../Mapa%20Copa.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="TitleCopaTx" layoutX="77.0" layoutY="14.0" prefHeight="53.0" prefWidth="478.0" text="Copa Airlines - Mapa de rutas" textAlignment="CENTER">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="Titulo2Copa" layoutX="691.0" layoutY="60.0" prefHeight="27.0" prefWidth="150.0" text="Encontrar tiquetes">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="destinoCopaTx" layoutX="710.0" layoutY="127.0" prefHeight="20.0" prefWidth="112.0" text="Destino de salida">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="SalidasCopa" layoutX="691.0" layoutY="153.0" prefWidth="150.0" />
+                        <Label fx:id="llegadaCopaTx" layoutX="705.0" layoutY="198.0" prefHeight="20.0" prefWidth="122.0" text="Destino de llegada">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="LlegadasCopa" layoutX="691.0" layoutY="222.0" prefWidth="150.0" />
+                        <Label fx:id="tempCopaTx" layoutX="731.0" layoutY="263.0" text="Temporada">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="TemporadaCopa" layoutX="692.0" layoutY="283.0" prefWidth="150.0" />
+                        <Label fx:id="CriterioCopaTx" layoutX="701.0" layoutY="332.0" prefHeight="20.0" prefWidth="133.0" text="Criterio de búsqueda">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="CriterioCopa" layoutX="693.0" layoutY="352.0" prefWidth="150.0" />
+                        <Label fx:id="MejorCopaTx" layoutX="688.0" layoutY="415.0" prefHeight="15.0" prefWidth="161.0" text="La mejor opción es:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TotalCopaTx" layoutX="700.0" layoutY="496.0" prefHeight="27.0" prefWidth="137.0" text="Con un total de:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="ComprarCopaBut" layoutX="726.0" layoutY="625.0" mnemonicParsing="false" text="Ir a comprar" />
+                        <Label fx:id="MejorOpcionCopa" layoutX="707.0" layoutY="454.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Label fx:id="TotalCopa" layoutX="710.0" layoutY="533.0" prefHeight="31.0" prefWidth="118.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Latam">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="715.0" prefWidth="910.0">
+                     <children>
+                        <ImageView fx:id="ImgLatam" fitHeight="635.0" fitWidth="604.0" layoutX="14.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../Mapa%20Latam.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="TitleLatamTx" layoutX="141.0" layoutY="14.0" prefHeight="44.0" prefWidth="364.0" text="Latam - Mapa de rutas" textAlignment="CENTER">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="Title2Latam" layoutX="691.0" layoutY="60.0" prefHeight="27.0" prefWidth="150.0" text="Encontrar tiquetes">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="destinoLatamTx" layoutX="710.0" layoutY="127.0" prefHeight="20.0" prefWidth="112.0" text="Destino de salida">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="SalidasLatam" layoutX="691.0" layoutY="153.0" prefWidth="150.0" />
+                        <Label fx:id="llegadaLatamTx" layoutX="705.0" layoutY="198.0" prefHeight="20.0" prefWidth="122.0" text="Destino de llegada">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="LlegadasLatam" layoutX="691.0" layoutY="222.0" prefWidth="150.0" />
+                        <Label fx:id="tempLatamTx" layoutX="731.0" layoutY="263.0" text="Temporada">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="TemporadaLatam" layoutX="692.0" layoutY="283.0" prefWidth="150.0" />
+                        <Label fx:id="CriterioLatamTx" layoutX="701.0" layoutY="332.0" prefHeight="20.0" prefWidth="133.0" text="Criterio de búsqueda">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="CriterioLatam" layoutX="693.0" layoutY="352.0" prefWidth="150.0" />
+                        <Label fx:id="MejorLatamTx" layoutX="688.0" layoutY="415.0" prefHeight="15.0" prefWidth="161.0" text="La mejor opción es:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TotalLatamTx" layoutX="700.0" layoutY="496.0" prefHeight="27.0" prefWidth="137.0" text="Con un total de:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="ComprarLatamBut" layoutX="726.0" layoutY="625.0" mnemonicParsing="false" text="Ir a comprar" />
+                        <Label fx:id="MejorOpcionLatam" layoutX="707.0" layoutY="454.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Label fx:id="TotalLatam" layoutX="710.0" layoutY="533.0" prefHeight="31.0" prefWidth="118.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
