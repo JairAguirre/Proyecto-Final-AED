@@ -189,6 +189,9 @@ public class Controller implements Initializable{
     @FXML
     void comprarAvianca(ActionEvent event) {
 
+    	String linkAvianca = "https://www.avianca.com/co/es/promociones/ofertas-vuelos-black-friday?gclid=CjwKCAiA0O7fBRASEiwAYI9QAjUvjhHCfdwhgMcrm0-uam4BrMYeDd_7fBvMv0Os-r0kEymfXuB7BhoC5O0QAvD_BwE&gclsrc=aw.ds";
+    	open(linkAvianca);
+    	
     }
 
     @FXML
@@ -198,7 +201,10 @@ public class Controller implements Initializable{
 
     @FXML
     void comprarCopa(ActionEvent event) {
-
+    	
+    	String linkCopa = "https://www.copaair.com/es/web/CO?d1=GS:es-CO_BR%5CModifiers%2FGeo@CO%26%26GS:es-CO_BR%5CModi%3DCM%2FEX@Travel.txt&gclid=CjwKCAiA0O7fBRASEiwAYI9QAlCjd0Fixx-2P0aqc3L4Q__tUPAZrD9moRViac-U9_aKx6lmxpj7RhoCX6EQAvD_BwE";
+    	open(linkCopa);
+    	
     }
 
     @FXML
