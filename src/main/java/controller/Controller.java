@@ -229,6 +229,8 @@ public class Controller implements Initializable{
     		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
     		MejorOpcionAvianca.setText(String.valueOf(sb));
     		
+    		unidadesAvianca.setText("Km");
+    		
     	}else if(CriterioAvianca.getValue().equals("Precio")) {
     		
     		
@@ -274,7 +276,7 @@ public class Controller implements Initializable{
         		MejorOpcionAvianca.setText(String.valueOf(sb));
     		}
     		
-    		
+    		unidadesAvianca.setText("Pesos");
     		
     	}
 
@@ -311,6 +313,8 @@ public class Controller implements Initializable{
 
     		sb.append(LlegadasCopa.getSelectionModel().getSelectedItem());
     		MejorOpcionCopa.setText(String.valueOf(sb));
+    		
+    		unidadesCopa.setText("Km");
     		
     	}else if(CriterioCopa.getValue().equals("Precio")) {
     		
@@ -357,7 +361,7 @@ public class Controller implements Initializable{
     			
     		}
     		
-    		
+    		unidadesCopa.setText("Pesos");
     	}
 
     }
@@ -393,6 +397,8 @@ public class Controller implements Initializable{
 
     		sb.append(LlegadasLatam.getSelectionModel().getSelectedItem());
     		MejorOpcionLatam.setText(String.valueOf(sb));
+    		
+    		unidadesLatam.setText("Km");
     		
     	}else if(CriterioLatam.getSelectionModel().getSelectedItem().equals("Precio")) {
     		
@@ -438,7 +444,7 @@ public class Controller implements Initializable{
     			
     		}
     		
-    		
+    		unidadesLatam.setText("Pesos");
     	}
     }
   
