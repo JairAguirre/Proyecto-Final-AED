@@ -188,7 +188,7 @@
                         <Button fx:id="ComprarLatamBut" layoutX="727.0" layoutY="650.0" mnemonicParsing="false" onAction="#comprarLatam" text="Ir a comprar" />
                         <Label fx:id="MejorOpcionLatam" layoutX="707.0" layoutY="507.0" prefHeight="31.0" prefWidth="118.0" />
                         <Label fx:id="TotalLatam" layoutX="710.0" layoutY="592.0" prefHeight="31.0" prefWidth="118.0" />
-                        <Button fx:id="CalcularLatamBut" layoutX="729.0" layoutY="419.0" mnemonicParsing="false" onAction="#calcularLatam" text="Calcular" />
+                        <Button fx:id="CalcularLatamBut" layoutX="729.0" layoutY="421.0" mnemonicParsing="false" onAction="#calcularLatam" text="Calcular" />
                      </children>
                   </AnchorPane>
                </content>

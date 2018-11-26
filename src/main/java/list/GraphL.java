@@ -57,8 +57,8 @@ public class GraphL<T> implements IGraphL<T> {
 		n1.addAdjacents(n2);
 		n1.addDistance(n2, distance);
 		
-		n2.addAdjacents(n1);
-		n2.addDistance(n1, distance);
+//		n2.addAdjacents(n1);
+//		n2.addDistance(n1, distance);
 		
 	}
 
