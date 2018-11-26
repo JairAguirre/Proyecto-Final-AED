@@ -33,7 +33,7 @@ class TreeTest extends TestCase{
 		
 		stageOne();
 		
-//		tree.add(node, parent);
+
 		String m =  tree.getRoot().getElem();
 	
 		

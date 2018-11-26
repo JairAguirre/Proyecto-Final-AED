@@ -351,6 +351,11 @@ public class GraphL<T> implements IGraphL<T> {
 			throw new Exception("Arista o nodo no existente");
 		return n1.getDistances().get(n2);
 	}
+
+	public int getTotalNodes() {
+		// TODO Auto-generated method stub
+		return totalNodes;
+	}
 	
 	
 
