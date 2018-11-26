@@ -12,7 +12,7 @@ public class Airport {
 	public Airport() {
 		
 		avianca = new Airline("Avianca", "link", 22);
-		CopaAirlines = new Airline("CopaAirlines", "link", 8);
+		CopaAirlines = new Airline("CopaAirlines", "link", 9);
 		LATAM = new Airline("LATAM", "link", 14);
 		
 		addCities();
@@ -55,6 +55,7 @@ public class Airport {
 		CopaAirlines.addCity(new City("Medellín"));
 		CopaAirlines.addCity(new City("San Andrés"));
 		CopaAirlines.addCity(new City("Pereira"));
+		CopaAirlines.addCity(new City("Santa Marta"));
 		
 		//LATAM
 		
@@ -115,39 +116,48 @@ public class Airport {
 		avianca.addEdge(new City("Medellín"), new City("Pasto"), 590);
 		
 		//CopaAirlines 
-		CopaAirlines.addEdge(new City("Barranquilla"), new City("San Andrés"), 778.31);
-		CopaAirlines.addEdge(new City("Barranquilla"), new City("Bucaramanga"), 465);		
+
+		CopaAirlines.addEdge(new City("Barranquilla"), new City("Santa Marta"), 70);		
 		CopaAirlines.addEdge(new City("Barranquilla"), new City("Cartagena"), 119);
 		CopaAirlines.addEdge(new City("Barranquilla"), new City("Pereira"), 692);
-		CopaAirlines.addEdge(new City("Barranquilla"), new City("Medellín"), 531);
-		CopaAirlines.addEdge(new City("Barranquilla"), new City("Cali"), 831.44);
+
 		
-		CopaAirlines.addEdge(new City("Bogotá"), new City("San Andrés"), 1204.95);
-		CopaAirlines.addEdge(new City("Bogotá"), new City("Bucaramanga"), 288.55);
-		CopaAirlines.addEdge(new City("Bogotá"), new City("Medellín"), 231.91);
-		CopaAirlines.addEdge(new City("Bogotá"), new City("Cali"), 279.23);
-		CopaAirlines.addEdge(new City("Bogotá"), new City("Pereira"), 177.1);
-		CopaAirlines.addEdge(new City("Bogotá"), new City("Cartagena"), 652.53);
+		CopaAirlines.addEdge(new City("Bogotá"), new City("Santa Marta"), 739);
+
 		
-		CopaAirlines.addEdge(new City("Bucaramanga"), new City("San Andrés"), 1119);		
+		
 		CopaAirlines.addEdge(new City("Bucaramanga"), new City("Pereira"), 384);		
-		CopaAirlines.addEdge(new City("Bucaramanga"), new City("Cartagena"), 449);		
-		CopaAirlines.addEdge(new City("Bucaramanga"), new City("Medellín"), 287);		
-		CopaAirlines.addEdge(new City("Bucaramanga"), new City("Cali"), 557);		
+		CopaAirlines.addEdge(new City("Bucaramanga"), new City("Santa Marta"), 474);		
 		
-		CopaAirlines.addEdge(new City("Cali"), new City("Cartagena"), 782);
-		CopaAirlines.addEdge(new City("Cali"), new City("Medellín"), 424);
-		CopaAirlines.addEdge(new City("Cali"), new City("San Andrés"), 1166);
+		
+
 		CopaAirlines.addEdge(new City("Cali"), new City("Pereira"), 178);
+		CopaAirlines.addEdge(new City("Cali"), new City("Santa Marta"), 903);
 		
-		CopaAirlines.addEdge(new City("Cartagena"), new City("Medellín"), 461);
-		CopaAirlines.addEdge(new City("Cartagena"), new City("San Andrés"), 716);		
+		CopaAirlines.addEdge(new City("Cartagena"), new City("Barranquilla"), 119);
+		CopaAirlines.addEdge(new City("Cartagena"), new City("Santa Marta"), 168);		
 		CopaAirlines.addEdge(new City("Cartagena"), new City("Pereira"), 622);
 		
-		CopaAirlines.addEdge(new City("Medellín"), new City("San Andrés"), 974);
+		CopaAirlines.addEdge(new City("Medellín"), new City("Santa Marta"), 576);
 		CopaAirlines.addEdge(new City("Medellín"), new City("Pereira"), 161);
 		
-		CopaAirlines.addEdge(new City("San Andrés"), new City("Pereira"), 1087);
+		CopaAirlines.addEdge(new City("Pereira"), new City("Barranquilla"), 692);
+		CopaAirlines.addEdge(new City("Pereira"), new City("Bucaramanga"), 384);
+		CopaAirlines.addEdge(new City("Pereira"), new City("Cali"), 178);
+		CopaAirlines.addEdge(new City("Pereira"), new City("Cartagena"), 622);
+		CopaAirlines.addEdge(new City("Pereira"), new City("Medellín"), 161);
+		CopaAirlines.addEdge(new City("Pereira"), new City("Santa Marta"), 733);
+		
+		CopaAirlines.addEdge(new City("San Andrés"), new City("Santa Marta"), 126);
+		
+		CopaAirlines.addEdge(new City("Santa Marta"), new City("Barranquilla"), 70);
+		CopaAirlines.addEdge(new City("Santa Marta"), new City("Bogotá"), 739);
+		CopaAirlines.addEdge(new City("Santa Marta"), new City("Bucaramanga"), 474);
+		CopaAirlines.addEdge(new City("Santa Marta"), new City("Cali"), 903);
+		CopaAirlines.addEdge(new City("Santa Marta"), new City("Cartagena"), 168);
+		CopaAirlines.addEdge(new City("Santa Marta"), new City("Medellín"), 576);
+		CopaAirlines.addEdge(new City("Santa Marta"), new City("Pereira"), 733);
+		CopaAirlines.addEdge(new City("Santa Marta"), new City("San Andrés"), 126);
 		
 
 		//LATAM
@@ -182,6 +192,316 @@ public class Airport {
 	
 	public void addEdgesP() {
 		
+			
+	//Avianca
+		
+		//Temporada Alta
+		avianca.addEdgePA(new City("Bogotá"), new City("Armenia"), 165090);
+		avianca.addEdgePA(new City("Bogotá"), new City("Barranquilla"), 147719);
+		avianca.addEdgePA(new City("Bogotá"), new City("Bucaramanga"), 154892);
+		avianca.addEdgePA(new City("Bogotá"), new City("Cali"), 174227);
+		avianca.addEdgePA(new City("Bogotá"), new City("Cartagena"), 98646);
+		avianca.addEdgePA(new City("Bogotá"), new City("Cúcuta"),  240278);
+		avianca.addEdgePA(new City("Bogotá"), new City("Ibagué"), 227870);
+		avianca.addEdgePA(new City("Bogotá"), new City("Leticia"), 283838);
+		avianca.addEdgePA(new City("Bogotá"), new City("Manizales"), 165090);
+		avianca.addEdgePA(new City("Bogotá"), new City("Medellín"), 108497);
+		avianca.addEdgePA(new City("Bogotá"), new City("Montería"), 120922);
+		avianca.addEdgePA(new City("Bogotá"), new City("Neiva"), 315967);
+		avianca.addEdgePA(new City("Bogotá"), new City("Pasto"), 306040);
+		avianca.addEdgePA(new City("Bogotá"), new City("Pereira"), 165090);
+		avianca.addEdgePA(new City("Bogotá"), new City("Popayán"), 307782);
+		avianca.addEdgePA(new City("Bogotá"), new City("Riohacha"), 187675);
+		avianca.addEdgePA(new City("Bogotá"), new City("San Andrés"), 260831);
+		avianca.addEdgePA(new City("Bogotá"), new City("Santa Marta"), 128411);
+		avianca.addEdgePA(new City("Bogotá"), new City("Tumaco"), 260631);
+		avianca.addEdgePA(new City("Bogotá"), new City("Valledupar"), 237056);
+		avianca.addEdgePA(new City("Bogotá"), new City("Villavicencio"), 311504);
+				
+		avianca.addEdgePA(new City("Cali"), new City("Barranquilla"), 166050);
+		avianca.addEdgePA(new City("Cali"), new City("Cartagena"), 179140);
+		avianca.addEdgePA(new City("Cali"), new City("Medellín"), 295050);
+		avianca.addEdgePA(new City("Cali"), new City("Pasto"), 444510);
+		avianca.addEdgePA(new City("Cali"), new City("Tumaco"), 233170);
+		avianca.addEdgePA(new City("Cali"), new City("Bogotá"), 202470);
+				
+		avianca.addEdgePA(new City("Medellín"), new City("Barranquilla"), 125760);
+		avianca.addEdgePA(new City("Medellín"), new City("Bucaramanga"), 183470);
+		avianca.addEdgePA(new City("Medellín"), new City("Cartagena"), 183470);
+		avianca.addEdgePA(new City("Medellín"), new City("Cúcuta"), 183470);
+		avianca.addEdgePA(new City("Medellín"), new City("Pasto"), 375180);
+		avianca.addEdgePA(new City("Medellín"), new City("Cali"), 331150);
+		avianca.addEdgePA(new City("Medellín"), new City("Bogotá"), 175260);
+		
+		avianca.addEdgePA(new City("Armenia"), new City("Bogotá"), 125090);
+		avianca.addEdgePA(new City("Barranquilla"), new City("Bogotá"), 11112);
+		avianca.addEdgePA(new City("Bucaramanga"), new City("Bogotá"), 167892);
+		avianca.addEdgePA(new City("Cartagena"), new City("Bogotá"), 121646);
+		avianca.addEdgePA(new City("Cúcuta"), new City("Bogotá"),  252278);
+		avianca.addEdgePA(new City("Ibagué"), new City("Bogotá"), 221870);
+		avianca.addEdgePA(new City("Leticia"), new City("Bogotá"), 258838);
+		avianca.addEdgePA(new City("Manizales"), new City("Bogotá"), 17090);
+		avianca.addEdgePA(new City("Medellín"), new City("Bogotá"), 115497);
+		avianca.addEdgePA(new City("Montería"), new City("Bogotá"), 112922);
+		avianca.addEdgePA(new City("Neiva"), new City("Bogotá"), 319967);
+		avianca.addEdgePA(new City("Pasto"), new City("Bogotá"), 317040);
+		avianca.addEdgePA(new City("Pereira"), new City("Bogotá"), 154090);
+		avianca.addEdgePA(new City("Popayán"), new City("Bogotá"), 314782);
+		avianca.addEdgePA(new City("Riohacha"), new City("Bogotá"), 114675);
+		avianca.addEdgePA(new City("San Andrés"), new City("Bogotá"), 240831);
+		avianca.addEdgePA(new City("Santa Marta"), new City("Bogotá"), 121411);
+		avianca.addEdgePA(new City("Tumaco"), new City("Bogotá"), 256631);
+		avianca.addEdgePA(new City("Valledupar"), new City("Bogotá"), 227070);
+		avianca.addEdgePA(new City("Villavicencio"), new City("Bogotá"), 301504);
+		
+		avianca.addEdgePA(new City("Barranquilla"), new City("Cali"), 156000);
+		avianca.addEdgePA(new City("Cartagena"), new City("Cali"), 185140);
+		avianca.addEdgePA(new City("Medellín"), new City("Cali"), 290050);
+		avianca.addEdgePA(new City("Pasto"), new City("Cali"), 470510);
+		avianca.addEdgePA(new City("Tumaco"), new City("Cali"), 245170);
+		
+		avianca.addEdgePA(new City("Barranquilla"), new City("Medellín"), 120760);
+		avianca.addEdgePA(new City("Bucaramanga"), new City("Medellín"), 172470);
+		avianca.addEdgePA(new City("Cartagena"), new City("Medellín"), 179470);
+		avianca.addEdgePA(new City("Cúcuta"), new City("Medellín"), 189470);
+		avianca.addEdgePA(new City("Pasto"), new City("Medellín"), 372180);
+		
+		//Temporada Baja
+		
+		avianca.addEdgePB(new City("Bogotá"), new City("Armenia"), 125134);
+		avianca.addEdgePB(new City("Bogotá"), new City("Barranquilla"), 118719);
+		avianca.addEdgePB(new City("Bogotá"), new City("Bucaramanga"), 131892);
+		avianca.addEdgePB(new City("Bogotá"), new City("Cali"), 140227);
+		avianca.addEdgePB(new City("Bogotá"), new City("Cartagena"), 82308);
+		avianca.addEdgePB(new City("Bogotá"), new City("Cúcuta"),  217958);
+		avianca.addEdgePB(new City("Bogotá"), new City("Ibagué"), 203870);
+		avianca.addEdgePB(new City("Bogotá"), new City("Leticia"), 270838);
+		avianca.addEdgePB(new City("Bogotá"), new City("Manizales"), 153090);
+		avianca.addEdgePB(new City("Bogotá"), new City("Medellín"), 95497);
+		avianca.addEdgePB(new City("Bogotá"), new City("Montería"), 101862);
+		avianca.addEdgePB(new City("Bogotá"), new City("Neiva"), 306967);
+		avianca.addEdgePB(new City("Bogotá"), new City("Pasto"), 297040);
+		avianca.addEdgePB(new City("Bogotá"), new City("Pereira"), 149090);
+		avianca.addEdgePB(new City("Bogotá"), new City("Popayán"), 290782);
+		avianca.addEdgePB(new City("Bogotá"), new City("Riohacha"), 152675);
+		avianca.addEdgePB(new City("Bogotá"), new City("San Andrés"), 225831);
+		avianca.addEdgePB(new City("Bogotá"), new City("Santa Marta"), 103411);
+		avianca.addEdgePB(new City("Bogotá"), new City("Tumaco"), 245631);
+		avianca.addEdgePB(new City("Bogotá"), new City("Valledupar"), 212056);
+		avianca.addEdgePB(new City("Bogotá"), new City("Villavicencio"), 300504);
+				
+		avianca.addEdgePB(new City("Cali"), new City("Barranquilla"), 142050);
+		avianca.addEdgePB(new City("Cali"), new City("Cartagena"), 158140);
+		avianca.addEdgePB(new City("Cali"), new City("Medellín"), 275050);
+		avianca.addEdgePB(new City("Cali"), new City("Pasto"), 360510);
+		avianca.addEdgePB(new City("Cali"), new City("Tumaco"), 201170);
+		avianca.addEdgePB(new City("Cali"), new City("Bogotá"), 175470);
+				
+		avianca.addEdgePB(new City("Medellín"), new City("Barranquilla"), 100760);
+		avianca.addEdgePB(new City("Medellín"), new City("Bucaramanga"), 135470);
+		avianca.addEdgePB(new City("Medellín"), new City("Cartagena"), 142470);
+		avianca.addEdgePB(new City("Medellín"), new City("Cúcuta"), 131470);
+		avianca.addEdgePB(new City("Medellín"), new City("Pasto"), 332180);
+		avianca.addEdgePB(new City("Medellín"), new City("Cali"), 310150);
+		avianca.addEdgePB(new City("Medellín"), new City("Bogotá"), 142260);
+		
+		avianca.addEdgePB(new City("Armenia"), new City("Bogotá"), 132090);
+		avianca.addEdgePB(new City("Barranquilla"), new City("Bogotá"), 121719);
+		avianca.addEdgePB(new City("Bucaramanga"), new City("Bogotá"), 121892);
+		avianca.addEdgePB(new City("Cartagena"), new City("Bogotá"), 75646);
+		avianca.addEdgePB(new City("Cúcuta"), new City("Bogotá"),  215278);
+		avianca.addEdgePB(new City("Ibagué"), new City("Bogotá"), 205870);
+		avianca.addEdgePB(new City("Leticia"), new City("Bogotá"), 236838);
+		avianca.addEdgePB(new City("Manizales"), new City("Bogotá"), 146090);
+		avianca.addEdgePB(new City("Medellín"), new City("Bogotá"), 96497);
+		avianca.addEdgePB(new City("Montería"), new City("Bogotá"), 110922);
+		avianca.addEdgePB(new City("Neiva"), new City("Bogotá"), 298967);
+		avianca.addEdgePB(new City("Pasto"), new City("Bogotá"), 285040);
+		avianca.addEdgePB(new City("Pereira"), new City("Bogotá"), 146090);
+		avianca.addEdgePB(new City("Popayán"), new City("Bogotá"), 289782);
+		avianca.addEdgePB(new City("Riohacha"), new City("Bogotá"), 152675);
+		avianca.addEdgePB(new City("San Andrés"), new City("Bogotá"), 231831);
+		avianca.addEdgePB(new City("Santa Marta"), new City("Bogotá"), 100411);
+		avianca.addEdgePB(new City("Tumaco"), new City("Bogotá"), 235631);
+		avianca.addEdgePB(new City("Valledupar"), new City("Bogotá"), 213056);
+		avianca.addEdgePB(new City("Villavicencio"), new City("Bogotá"), 296504);
+		
+		avianca.addEdgePB(new City("Barranquilla"), new City("Cali"), 141050);
+		avianca.addEdgePB(new City("Cartagena"), new City("Cali"), 146140);
+		avianca.addEdgePB(new City("Medellín"), new City("Cali"), 275050);
+		avianca.addEdgePB(new City("Pasto"), new City("Cali"), 362510);
+		avianca.addEdgePB(new City("Tumaco"), new City("Cali"), 202170);
+		
+		avianca.addEdgePB(new City("Barranquilla"), new City("Medellín"), 100760);
+		avianca.addEdgePB(new City("Bucaramanga"), new City("Medellín"), 141470);
+		avianca.addEdgePB(new City("Cartagena"), new City("Medellín"), 136470);
+		avianca.addEdgePB(new City("Cúcuta"), new City("Medellín"), 128470);
+		avianca.addEdgePB(new City("Pasto"), new City("Medellín"), 345180);
+				
+	//CopaAirlines 
+
+		//Temporada Alta
+		CopaAirlines.addEdgePA(new City("Barranquilla"), new City("Santa Marta"), 380546);		
+		CopaAirlines.addEdgePA(new City("Barranquilla"), new City("Cartagena"), 250496);
+		CopaAirlines.addEdgePA(new City("Barranquilla"), new City("Pereira"), 302865);
+
+		CopaAirlines.addEdgePA(new City("Bogotá"), new City("Santa Marta"), 130284);
+				
+		CopaAirlines.addEdgePA(new City("Bucaramanga"), new City("Pereira"), 295642);		
+		CopaAirlines.addEdgePA(new City("Bucaramanga"), new City("Santa Marta"), 120365);		
+
+		CopaAirlines.addEdgePA(new City("Cali"), new City("Pereira"), 178562);
+		CopaAirlines.addEdgePA(new City("Cali"), new City("Santa Marta"), 203642);
+				
+		CopaAirlines.addEdgePA(new City("Cartagena"), new City("Barranquilla"), 260574);
+		CopaAirlines.addEdgePA(new City("Cartagena"), new City("Santa Marta"), 280645);		
+		CopaAirlines.addEdgePA(new City("Cartagena"), new City("Pereira"), 220315);
+				
+		CopaAirlines.addEdgePA(new City("Medellín"), new City("Santa Marta"), 128945);
+		CopaAirlines.addEdgePA(new City("Medellín"), new City("Pereira"), 297500);
+				
+		CopaAirlines.addEdgePA(new City("Pereira"), new City("Barranquilla"), 294150);
+		CopaAirlines.addEdgePA(new City("Pereira"), new City("Bucaramanga"), 289652);
+		CopaAirlines.addEdgePA(new City("Pereira"), new City("Cali"), 153265);
+		CopaAirlines.addEdgePA(new City("Pereira"), new City("Cartagena"), 215840);
+		CopaAirlines.addEdgePA(new City("Pereira"), new City("Medellín"), 300875);
+		CopaAirlines.addEdgePA(new City("Pereira"), new City("Santa Marta"), 144100);
+				
+		CopaAirlines.addEdgePA(new City("San Andrés"), new City("Santa Marta"), 319312);
+				
+		CopaAirlines.addEdgePA(new City("Santa Marta"), new City("Barranquilla"), 350480);
+		CopaAirlines.addEdgePA(new City("Santa Marta"), new City("Bogotá"), 150200);
+		CopaAirlines.addEdgePA(new City("Santa Marta"), new City("Bucaramanga"), 154200);
+		CopaAirlines.addEdgePA(new City("Santa Marta"), new City("Cali"), 215360);
+		CopaAirlines.addEdgePA(new City("Santa Marta"), new City("Cartagena"), 294500);
+		CopaAirlines.addEdgePA(new City("Santa Marta"), new City("Medellín"), 142780);
+		CopaAirlines.addEdgePA(new City("Santa Marta"), new City("Pereira"), 165241);
+		CopaAirlines.addEdgePA(new City("Santa Marta"), new City("San Andrés"), 346200);
+		
+		//Temporada Baja
+		CopaAirlines.addEdgePB(new City("Barranquilla"), new City("Santa Marta"), 340546);		
+		CopaAirlines.addEdgePB(new City("Barranquilla"), new City("Cartagena"), 212496);
+		CopaAirlines.addEdgePB(new City("Barranquilla"), new City("Pereira"), 265865);
+
+		CopaAirlines.addEdgePB(new City("Bogotá"), new City("Santa Marta"), 100284);
+				
+		CopaAirlines.addEdgePB(new City("Bucaramanga"), new City("Pereira"), 246642);		
+		CopaAirlines.addEdgePB(new City("Bucaramanga"), new City("Santa Marta"), 98365);		
+
+		CopaAirlines.addEdgePB(new City("Cali"), new City("Pereira"), 132562);
+		CopaAirlines.addEdgePB(new City("Cali"), new City("Santa Marta"), 170642);
+				
+		CopaAirlines.addEdgePB(new City("Cartagena"), new City("Barranquilla"), 221574);
+		CopaAirlines.addEdgePB(new City("Cartagena"), new City("Santa Marta"), 237645);		
+		CopaAirlines.addEdgePB(new City("Cartagena"), new City("Pereira"), 229315);
+				
+		CopaAirlines.addEdgePB(new City("Medellín"), new City("Santa Marta"), 100945);
+		CopaAirlines.addEdgePB(new City("Medellín"), new City("Pereira"), 251470);
+				
+		CopaAirlines.addEdgePB(new City("Pereira"), new City("Barranquilla"), 235150);
+		CopaAirlines.addEdgePB(new City("Pereira"), new City("Bucaramanga"), 231652);
+		CopaAirlines.addEdgePB(new City("Pereira"), new City("Cali"), 116265);
+		CopaAirlines.addEdgePB(new City("Pereira"), new City("Cartagena"), 197840);
+		CopaAirlines.addEdgePB(new City("Pereira"), new City("Medellín"), 264875);
+		CopaAirlines.addEdgePB(new City("Pereira"), new City("Santa Marta"), 102100);
+				
+		CopaAirlines.addEdgePB(new City("San Andrés"), new City("Santa Marta"), 294312);
+				
+		CopaAirlines.addEdgePB(new City("Santa Marta"), new City("Barranquilla"), 303480);
+		CopaAirlines.addEdgePB(new City("Santa Marta"), new City("Bogotá"), 104200);
+		CopaAirlines.addEdgePB(new City("Santa Marta"), new City("Bucaramanga"), 112200);
+		CopaAirlines.addEdgePB(new City("Santa Marta"), new City("Cali"), 195360);
+		CopaAirlines.addEdgePB(new City("Santa Marta"), new City("Cartagena"), 242500);
+		CopaAirlines.addEdgePB(new City("Santa Marta"), new City("Medellín"), 112780);
+		CopaAirlines.addEdgePB(new City("Santa Marta"), new City("Pereira"), 121241);
+		CopaAirlines.addEdgePB(new City("Santa Marta"), new City("San Andrés"), 305200);
+				
+
+		//LATAM
+			
+		//Temporada Alta
+		LATAM.addEdgePA(new City("Bogotá"), new City("San Andrés"), 126900);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Cali"), 169265);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Leticia"), 360155);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Yopal"), 189200);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Bucaramanga"), 150195);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Cúcuta"),  201502);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Valledupar"), 191877);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Santa Marta"), 158790);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Barranquilla"), 156752);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Cartagena"), 146523);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Montería"), 141273);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Medellín"), 117130);
+		LATAM.addEdgePA(new City("Bogotá"), new City("Pereira"), 227078);
+		
+		LATAM.addEdgePA(new City("San Andrés"), new City("Bogotá"), 136850);
+		LATAM.addEdgePA(new City("Cali"), new City("Bogotá"), 169265);
+		LATAM.addEdgePA(new City("Leticia"), new City("Bogotá"), 360155);
+		LATAM.addEdgePA(new City("Yopal"), new City("Bogotá"), 175200);
+		LATAM.addEdgePA(new City("Bucaramanga"), new City("Bogotá"), 162195);
+		LATAM.addEdgePA(new City("Cúcuta"), new City("Bogotá"),  212502);
+		LATAM.addEdgePA(new City("Valledupar"), new City("Bogotá"), 184877);
+		LATAM.addEdgePA(new City("Santa Marta"), new City("Bogotá"), 142790);
+		LATAM.addEdgePA(new City("Barranquilla"), new City("Bogotá"), 165752);
+		LATAM.addEdgePA(new City("Cartagena"), new City("Bogotá"), 157523);
+		LATAM.addEdgePA(new City("Montería"), new City("Bogotá"), 124273);
+		LATAM.addEdgePA(new City("Medellín"), new City("Bogotá"), 142130);
+		LATAM.addEdgePA(new City("Pereira"), new City("Bogotá"), 243078);
+				
+		LATAM.addEdgePA(new City("Cali"), new City("San Andrés"), 213663);
+		LATAM.addEdgePA(new City("San Andrés"), new City("Cali"), 235800);
+				
+		LATAM.addEdgePA(new City("Santa Marta"), new City("Medellín"), 349827);
+		LATAM.addEdgePA(new City("Medellín"), new City("Santa Marta"), 365478);
+		LATAM.addEdgePA(new City("San Andrés"), new City("Medellín"), 373650);
+		LATAM.addEdgePA(new City("Medellín"), new City("San Andrés"), 398765);
+				
+		LATAM.addEdgePA(new City("San Andrés"), new City("Cartagena"), 197770);
+		LATAM.addEdgePA(new City("Cartagena"), new City("San Andrés"), 212530);
+		LATAM.addEdgePA(new City("Cartagena"), new City("Medellín"), 230209);
+				
+		//Temporada Baja
+		LATAM.addEdgePB(new City("Bogotá"), new City("San Andrés"), 100900);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Cali"), 121265);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Leticia"), 332155);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Yopal"), 141200);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Bucaramanga"), 112195);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Cúcuta"),  184502);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Valledupar"), 172877);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Santa Marta"), 125790);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Barranquilla"), 120752);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Cartagena"), 112523);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Montería"), 108273);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Medellín"), 99130);
+		LATAM.addEdgePB(new City("Bogotá"), new City("Pereira"), 172078);
+		
+		LATAM.addEdgePB(new City("San Andrés"), new City("Bogotá"), 100850);
+		LATAM.addEdgePB(new City("Cali"), new City("Bogotá"), 121265);
+		LATAM.addEdgePB(new City("Leticia"), new City("Bogotá"), 310155);
+		LATAM.addEdgePB(new City("Yopal"), new City("Bogotá"), 121200);
+		LATAM.addEdgePB(new City("Bucaramanga"), new City("Bogotá"), 112195);
+		LATAM.addEdgePB(new City("Cúcuta"), new City("Bogotá"),  185502);
+		LATAM.addEdgePB(new City("Valledupar"), new City("Bogotá"), 125877);
+		LATAM.addEdgePB(new City("Santa Marta"), new City("Bogotá"), 110790);
+		LATAM.addEdgePB(new City("Barranquilla"), new City("Bogotá"), 115752);
+		LATAM.addEdgePB(new City("Cartagena"), new City("Bogotá"), 114523);
+		LATAM.addEdgePB(new City("Montería"), new City("Bogotá"), 100273);
+		LATAM.addEdgePB(new City("Medellín"), new City("Bogotá"), 102130);
+		LATAM.addEdgePB(new City("Pereira"), new City("Bogotá"), 213078);
+				
+		LATAM.addEdgePB(new City("Cali"), new City("San Andrés"), 192663);
+		LATAM.addEdgePB(new City("San Andrés"), new City("Cali"), 200800);
+				
+		LATAM.addEdgePB(new City("Santa Marta"), new City("Medellín"), 325827);
+		LATAM.addEdgePB(new City("Medellín"), new City("Santa Marta"), 320478);
+		LATAM.addEdgePB(new City("San Andrés"), new City("Medellín"), 335650);
+		LATAM.addEdgePB(new City("Medellín"), new City("San Andrés"), 340765);
+				
+		LATAM.addEdgePB(new City("San Andrés"), new City("Cartagena"), 145770);
+		LATAM.addEdgePB(new City("Cartagena"), new City("San Andrés"), 182530);
+		LATAM.addEdgePB(new City("Cartagena"), new City("Medellín"), 197209);
+				
+
 		
 	}
 	
