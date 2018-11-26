@@ -23,6 +23,15 @@ import model.*;
 public class Controller implements Initializable{
 
 	Airport airport = new Airport();
+	
+    @FXML
+    private Label unidadesLatam;
+    
+    @FXML
+    private Label unidadesCopa;
+    
+    @FXML
+    private Label unidadesAvianca;
 
     @FXML
     private Button CalcularLatamBut;

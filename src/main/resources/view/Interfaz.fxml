@@ -64,9 +64,20 @@
                            </font>
                         </Label>
                         <Button fx:id="ComprarAviancaBut" layoutX="726.0" layoutY="657.0" mnemonicParsing="false" onAction="#comprarAvianca" text="Ir a comprar" />
-                        <Label fx:id="MejorOpcionAvianca" layoutX="707.0" layoutY="502.0" prefHeight="31.0" prefWidth="118.0" />
-                        <Label fx:id="TotalAvianca" layoutX="707.0" layoutY="591.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Label fx:id="MejorOpcionAvianca" alignment="CENTER" contentDisplay="CENTER" layoutX="644.0" layoutY="505.0" prefHeight="31.0" prefWidth="244.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="TotalAvianca" alignment="CENTER" contentDisplay="CENTER" layoutX="678.0" layoutY="591.0" prefHeight="31.0" prefWidth="118.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
                         <Button fx:id="CalcularAvBut" layoutX="737.0" layoutY="411.0" mnemonicParsing="false" onAction="#CalcularAvianca" text="Calcular" />
+                        <Label fx:id="unidadesAvianca" alignment="CENTER" contentDisplay="CENTER" layoutX="807.0" layoutY="590.0" prefHeight="33.0" prefWidth="41.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </content>
@@ -125,9 +136,16 @@
                            </font>
                         </Label>
                         <Button fx:id="ComprarCopaBut" layoutX="726.0" layoutY="652.0" mnemonicParsing="false" onAction="#comprarCopa" text="Ir a comprar" />
-                        <Label fx:id="MejorOpcionCopa" layoutX="708.0" layoutY="500.0" prefHeight="31.0" prefWidth="118.0" />
-                        <Label fx:id="TotalCopa" layoutX="708.0" layoutY="575.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Label fx:id="MejorOpcionCopa" alignment="CENTER" contentDisplay="CENTER" layoutX="650.0" layoutY="500.0" prefHeight="31.0" prefWidth="232.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="TotalCopa" alignment="CENTER" contentDisplay="CENTER" layoutX="672.0" layoutY="574.0" prefHeight="31.0" prefWidth="118.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
                         <Button fx:id="CalcularCopaBut" layoutX="737.0" layoutY="419.0" mnemonicParsing="false" onAction="#calcularCopa" text="Calcular" />
+                        <Label fx:id="unidadesCopa" layoutX="809.0" layoutY="574.0" prefHeight="31.0" prefWidth="36.0" />
                      </children>
                   </AnchorPane>
                </content>
@@ -186,9 +204,20 @@
                            </font>
                         </Label>
                         <Button fx:id="ComprarLatamBut" layoutX="727.0" layoutY="650.0" mnemonicParsing="false" onAction="#comprarLatam" text="Ir a comprar" />
-                        <Label fx:id="MejorOpcionLatam" layoutX="707.0" layoutY="507.0" prefHeight="31.0" prefWidth="118.0" />
-                        <Label fx:id="TotalLatam" layoutX="710.0" layoutY="592.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Label fx:id="MejorOpcionLatam" alignment="CENTER" contentDisplay="CENTER" layoutX="666.0" layoutY="506.0" prefHeight="31.0" prefWidth="208.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="TotalLatam" alignment="CENTER" contentDisplay="CENTER" layoutX="672.0" layoutY="593.0" prefHeight="31.0" prefWidth="118.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
                         <Button fx:id="CalcularLatamBut" layoutX="729.0" layoutY="421.0" mnemonicParsing="false" onAction="#calcularLatam" text="Calcular" />
+                        <Label fx:id="unidadesLatam" alignment="CENTER" contentDisplay="CENTER" layoutX="809.0" layoutY="592.0" prefHeight="34.0" prefWidth="36.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </content>
