@@ -11,6 +11,7 @@ public class Airline {
 	private String link;
 	private GraphM<City> cities;
 	private GraphL<City> prices;
+	private ArrayList<City> ct;
 
 	
 	public Airline(String name, String link, int city) {
@@ -18,6 +19,7 @@ public class Airline {
 		this.link = link;
 		cities = new GraphM<City>(city);
 		prices = new GraphL<City>(city);
+		ct = new ArrayList<City>();
 	}
 	
 	
@@ -60,11 +62,37 @@ public class Airline {
 
 	public void addCity(City c) {
 		cities.addNodeM(c);
+		ct.add(c);
 	}
 	
 	public void addEdge(City c1, City c2, double distance) {
 		
-		cities.addEdge(c1, c2, distance);
+		boolean find = false;
+		int city1 = 0;
+		int city2 = 0;
+				
+		for(int i = 0; i < ct.size() && !find; i++) {
+			
+			if(c1.getName().equals(ct.get(i).getName())) {
+				
+				city1 = i;
+				find = true;
+			}
+			
+		}
+		
+		find = false;
+		for(int i = 0; i < ct.size() && !find; i++) {
+			
+			if(c2.getName().equals(ct.get(i).getName())) {
+				
+				city2 = i;
+				find = true;
+			}
+			
+		}
+		
+		cities.addEdge(ct.get(city1), ct.get(city2), distance);
 	}
 	
 	public double getMinDistance(City c1, City c2) {
@@ -114,6 +142,32 @@ public class Airline {
 		
 		return path;
 	}
+
+
+
+	public GraphL<City> getPrices() {
+		return prices;
+	}
+
+
+
+	public void setPrices(GraphL<City> prices) {
+		this.prices = prices;
+	}
+
+
+
+	public ArrayList<City> getCt() {
+		return ct;
+	}
+
+
+
+	public void setCt(ArrayList<City> ct) {
+		this.ct = ct;
+	}
+	
+	
 	 
 
 }
