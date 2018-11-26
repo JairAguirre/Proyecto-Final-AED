@@ -1,13 +1,11 @@
 package test;
 
 
-import static org.junit.Assert.assertArrayEquals;
 
 import java.util.ArrayList;
 
-import org.junit.jupiter.api.Test;
 
-import interfaces.Tree;
+
 import junit.framework.TestCase;
 import matrix.GraphM;
 import matrix.NodeM;
@@ -89,7 +87,7 @@ class GraphMtest extends TestCase {
 		
 		//siempre retorna cero
 		
-		int m = graph.getDistance("re2", "re4");
+		double m = graph.getDistance("re2", "re4");
 		
 		assertTrue(m ==0);
 	}
@@ -99,9 +97,9 @@ class GraphMtest extends TestCase {
 		
 		stageOne();
 		
-		int[][] m =  graph.floydWarshall();
+		double[][] m =  graph.floydWarshall();
 		
-		int[][] g =  graph.floydWarshall();
+		double[][] g =  graph.floydWarshall();
 		
 		assertArrayEquals(m, g);
 		

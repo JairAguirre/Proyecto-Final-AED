@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Test;
 
 
 import interfaces.NodeTree;
+import junit.framework.TestCase;
 
-class NodeTreeTest {
+class NodeTreeTest extends TestCase {
 
 	
 	private NodeTree<String> tree;

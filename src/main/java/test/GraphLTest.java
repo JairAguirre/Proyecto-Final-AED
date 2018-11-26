@@ -1,6 +1,10 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+import junit.framework.TestCase;
+
+import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
@@ -8,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import list.GraphL;
 import matrix.GraphM;
 
-class GraphLTest {
+class GraphLTest extends TestCase{
 
 	private GraphL<String> graph;
 	
