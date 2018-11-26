@@ -93,16 +93,16 @@ public class GraphM<T> implements IGraphM<T> {
 		
 		NodeM<T> v1 = searchNodeM(key);
 		NodeM<T> v2 = searchNodeM(key2);
-		
-		if(v1 == null) {
-			addNodeM(key);
-			v1 = searchNodeM(key);
-		}
-		if(v2 == null) {
-			addNodeM(key2);
-			v2 = searchNodeM(key2);
-		}
-		
+//		
+//		if(v1 == null) {
+//			addNodeM(key);
+//			v1 = searchNodeM(key);
+//		}
+//		if(v2 == null) {
+//			addNodeM(key2);
+//			v2 = searchNodeM(key2);
+//		}
+//		
 		int pos1 = nodes.indexOf(v1);
 		int pos2 = nodes.indexOf(v2);
 		

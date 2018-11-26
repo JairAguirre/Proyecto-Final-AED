@@ -20,6 +20,8 @@ import model.*;
 
 public class Controller implements Initializable{
 
+	Airport airport = new Airport();
+
 	
 	@FXML
     private Label llegadaAviancaTx;
@@ -215,7 +217,36 @@ public class Controller implements Initializable{
     	CriterioCopa.getItems().add("Distancia");
     	CriterioCopa.getItems().add("Precio");
     	
+    	for(int i = 0;i < airport.getCitiesAvianca().size(); i++) {
+    		SalidasAvianca.getItems().add(airport.getCitiesAvianca().get(i).getName());
+    		
+    	}
     	
+    	for(int i = 0;i < airport.getCitiesCopaAirlines().size(); i++) {
+    		SalidasCopa.getItems().add(airport.getCitiesCopaAirlines().get(i).getName());
+    		
+    	}
+    	
+
+    	for(int i = 0;i < airport.getCitiesLATAM().size(); i++) {
+    		SalidasLatam.getItems().add(airport.getCitiesLATAM().get(i).getName());
+    		
+    	}
+    		
+    	for(int i = 0;i < airport.getCitiesAvianca().size(); i++) {
+    		LlegadasAvianca.getItems().add(airport.getCitiesAvianca().get(i).getName());
+    		
+    	}
+    		
+    	for(int i = 0;i < airport.getCitiesLATAM().size(); i++) {
+    		LlegadasLatam.getItems().add(airport.getCitiesLATAM().get(i).getName());
+    		
+    	}
+    	
+    	for(int i = 0;i < airport.getCitiesCopaAirlines().size(); i++) {
+    		LlegadasCopa.getItems().add(airport.getCitiesCopaAirlines().get(i).getName());
+    		
+    	}
     	
     }
 
@@ -230,6 +261,10 @@ public class Controller implements Initializable{
 
 		Image imagen3 = new Image("data/MapaCo.jpg");
 		ImgCopa.setImage(imagen3);
+		
+		initBoxes();
+//		Airport a = new Airport();
+//		TotalCopa.setText(String.valueOf(a.getMinDistanceAvianca(new City("Bogotá"), new City("Cali"))));
 	}
     
   

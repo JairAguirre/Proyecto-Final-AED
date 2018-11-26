@@ -2,6 +2,8 @@ package interfaces;
 
 import java.util.ArrayList;
 
+import matrix.NodeM;
+
 public class Tree<T> {
 
 	private NodeTree<T> root;
@@ -51,6 +53,11 @@ public class Tree<T> {
 			auxPrint(list, actu.getChilds().get(i));
 		}
 		
+	}
+
+	public NodeTree<T> getRoot() {
+		// TODO Auto-generated method stub
+		return root;
 	}
 	
 	
