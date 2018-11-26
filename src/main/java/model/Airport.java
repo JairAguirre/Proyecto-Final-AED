@@ -208,6 +208,19 @@ public class Airport {
 		return LATAM.getParentMinDidstnce(c1, c2);
 	}
 	
+	//ciudades
+	
+	public ArrayList<City> getCitiesAvianca(){
+		return avianca.getCt();
+	}
+	public ArrayList<City> getCitiesCopaAirlines(){
+		return CopaAirlines.getCt();
+	}
+	public ArrayList<City> getCitiesLATAM(){
+		return LATAM.getCt();
+	}
+	
+	
 	
 	
 	//get and set
@@ -219,6 +232,23 @@ public class Airport {
 	public void setAvianca(Airline avianca) {
 		this.avianca = avianca;
 	}
+
+	public Airline getCopaAirlines() {
+		return CopaAirlines;
+	}
+
+	public void setCopaAirlines(Airline copaAirlines) {
+		CopaAirlines = copaAirlines;
+	}
+
+	public Airline getLATAM() {
+		return LATAM;
+	}
+
+	public void setLATAM(Airline lATAM) {
+		LATAM = lATAM;
+	}
+	
 	
 	
 	
