@@ -53,19 +53,20 @@
                            </font>
                         </Label>
                         <ComboBox fx:id="CriterioAvianca" layoutX="693.0" layoutY="352.0" prefWidth="150.0" />
-                        <Label fx:id="MejorAviancaTx" layoutX="688.0" layoutY="415.0" prefHeight="15.0" prefWidth="161.0" text="La mejor opción es:">
+                        <Label fx:id="MejorAviancaTx" layoutX="687.0" layoutY="460.0" prefHeight="15.0" prefWidth="161.0" text="La mejor opción es:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="TotalAviancaTx" layoutX="700.0" layoutY="496.0" prefHeight="27.0" prefWidth="137.0" text="Con un total de:">
+                        <Label fx:id="TotalAviancaTx" layoutX="700.0" layoutY="552.0" prefHeight="27.0" prefWidth="137.0" text="Con un total de:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="ComprarAviancaBut" layoutX="726.0" layoutY="625.0" mnemonicParsing="false" text="Ir a comprar" />
-                        <Label fx:id="MejorOpcionAvianca" layoutX="707.0" layoutY="454.0" prefHeight="31.0" prefWidth="118.0" />
-                        <Label fx:id="TotalAvianca" layoutX="710.0" layoutY="533.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Button fx:id="ComprarAviancaBut" layoutX="726.0" layoutY="657.0" mnemonicParsing="false" onAction="#comprarAvianca" text="Ir a comprar" />
+                        <Label fx:id="MejorOpcionAvianca" layoutX="707.0" layoutY="502.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Label fx:id="TotalAvianca" layoutX="707.0" layoutY="591.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Button fx:id="CalcularAvBut" layoutX="737.0" layoutY="411.0" mnemonicParsing="false" onAction="#CalcularAvianca" text="Calcular" />
                      </children>
                   </AnchorPane>
                </content>
@@ -113,19 +114,20 @@
                            </font>
                         </Label>
                         <ComboBox fx:id="CriterioCopa" layoutX="693.0" layoutY="352.0" prefWidth="150.0" />
-                        <Label fx:id="MejorCopaTx" layoutX="688.0" layoutY="415.0" prefHeight="15.0" prefWidth="161.0" text="La mejor opción es:">
+                        <Label fx:id="MejorCopaTx" layoutX="689.0" layoutY="462.0" prefHeight="15.0" prefWidth="161.0" text="La mejor opción es:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="TotalCopaTx" layoutX="700.0" layoutY="496.0" prefHeight="27.0" prefWidth="137.0" text="Con un total de:">
+                        <Label fx:id="TotalCopaTx" layoutX="701.0" layoutY="541.0" prefHeight="27.0" prefWidth="137.0" text="Con un total de:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="ComprarCopaBut" layoutX="726.0" layoutY="625.0" mnemonicParsing="false" text="Ir a comprar" />
-                        <Label fx:id="MejorOpcionCopa" layoutX="707.0" layoutY="454.0" prefHeight="31.0" prefWidth="118.0" />
-                        <Label fx:id="TotalCopa" layoutX="710.0" layoutY="533.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Button fx:id="ComprarCopaBut" layoutX="726.0" layoutY="652.0" mnemonicParsing="false" onAction="#comprarCopa" text="Ir a comprar" />
+                        <Label fx:id="MejorOpcionCopa" layoutX="708.0" layoutY="500.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Label fx:id="TotalCopa" layoutX="708.0" layoutY="575.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Button fx:id="CalcularCopaBut" layoutX="737.0" layoutY="419.0" mnemonicParsing="false" onAction="#calcularCopa" text="Calcular" />
                      </children>
                   </AnchorPane>
                </content>
@@ -173,19 +175,20 @@
                            </font>
                         </Label>
                         <ComboBox fx:id="CriterioLatam" layoutX="693.0" layoutY="352.0" prefWidth="150.0" />
-                        <Label fx:id="MejorLatamTx" layoutX="688.0" layoutY="415.0" prefHeight="15.0" prefWidth="161.0" text="La mejor opción es:">
+                        <Label fx:id="MejorLatamTx" layoutX="689.0" layoutY="470.0" prefHeight="15.0" prefWidth="161.0" text="La mejor opción es:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="TotalLatamTx" layoutX="700.0" layoutY="496.0" prefHeight="27.0" prefWidth="137.0" text="Con un total de:">
+                        <Label fx:id="TotalLatamTx" layoutX="698.0" layoutY="555.0" prefHeight="27.0" prefWidth="137.0" text="Con un total de:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="ComprarLatamBut" layoutX="726.0" layoutY="625.0" mnemonicParsing="false" text="Ir a comprar" />
-                        <Label fx:id="MejorOpcionLatam" layoutX="707.0" layoutY="454.0" prefHeight="31.0" prefWidth="118.0" />
-                        <Label fx:id="TotalLatam" layoutX="710.0" layoutY="533.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Button fx:id="ComprarLatamBut" layoutX="727.0" layoutY="650.0" mnemonicParsing="false" onAction="#comprarLatam" text="Ir a comprar" />
+                        <Label fx:id="MejorOpcionLatam" layoutX="707.0" layoutY="507.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Label fx:id="TotalLatam" layoutX="710.0" layoutY="592.0" prefHeight="31.0" prefWidth="118.0" />
+                        <Button fx:id="CalcularLatamBut" layoutX="729.0" layoutY="419.0" mnemonicParsing="false" onAction="#calcularLatam" text="Calcular" />
                      </children>
                   </AnchorPane>
                </content>

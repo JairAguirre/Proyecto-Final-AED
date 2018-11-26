@@ -22,6 +22,14 @@ public class Controller implements Initializable{
 
 	Airport airport = new Airport();
 
+    @FXML
+    private Button CalcularLatamBut;
+    
+    @FXML
+    private Button CalcularCopaBut;
+    
+    @FXML
+    private Button CalcularAvBut;
 	
 	@FXML
     private Label llegadaAviancaTx;
@@ -169,36 +177,48 @@ public class Controller implements Initializable{
     
     public void open(String link) {
     	
-    	try {
-			Desktop.getDesktop().browse(new URI(link));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	Desktop enlace=Desktop.getDesktop();
+        try {
+                enlace.browse(new URI(link));
+        } catch (IOException | URISyntaxException e) {
+            System.out.println("Alv no sirvo");
+        }
     	
     }
     
     @FXML
-    public void comprarLa(ActionEvent event) {
+    void comprarAvianca(ActionEvent event) {
+
+    }
+
+    @FXML
+    void CalcularAvianca(ActionEvent event) {
+
+    }
+
+    @FXML
+    void comprarCopa(ActionEvent event) {
+
+    }
+
+    @FXML
+    void calcularCopa(ActionEvent event) {
+
+    }
+
+    @FXML
+    void comprarLatam(ActionEvent event) {
     	
     	String linkLatam = "https://www.latam.com/es_co/promociones/cyber-latam/?gclid=CjwKCAiA0O7fBRASEiwAYI9QAp-VtccZJgD63WY6HiRFnwG5vPzFcKRGbzJ36Jz7GwGDIg7wK7bgVhoCc04QAvD_BwE&gclsrc=aw.ds";
     	open(linkLatam);
-    	
-    }
-
-    @FXML
-    void comprarCo(ActionEvent event) {
 
     }
 
     @FXML
-    void comprarAv(ActionEvent event) {
+    void calcularLatam(ActionEvent event) {
 
     }
-
+  
     
     public void initBoxes() {
     	
