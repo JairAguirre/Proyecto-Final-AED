@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -196,6 +198,76 @@ public class Controller implements Initializable{
 
     @FXML
     void CalcularAvianca(ActionEvent event) {
+    	
+   
+    	String criterio = CriterioAvianca.getSelectionModel().getSelectedItem();
+    	if(criterio.equals("Distancia")) {
+    		
+    		String ci = SalidasAvianca.getSelectionModel().getSelectedItem();
+    		City c1 = new City(ci);
+    		ci = LlegadasAvianca.getSelectionModel().getSelectedItem();
+    		City c2 = new City(ci);
+    		
+    		double distance = airport.getMinDistanceAvianca(c1, c2);
+    		ArrayList<City> path = airport.getParentMinDidstnceAvianca(c1, c2);
+
+    		TotalAvianca.setText(String.valueOf(distance));
+    		StringBuilder sb = new StringBuilder();
+    		for(int i = 0; i < path.size(); i++) {
+    			sb.append(path.get(i).getName() + "-");
+    		}
+
+    		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+    		MejorOpcionAvianca.setText(String.valueOf(sb));
+    		
+    	}else if(CriterioAvianca.getValue().equals("Precio")) {
+    		
+    		
+    		if(TemporadaAvianca.getSelectionModel().getSelectedItem().equals("Temporada Alta")) {
+    			
+    			String ci = SalidasAvianca.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasAvianca.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceAavianca(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceAavianca(c1, c2);
+        		
+        		TotalAvianca.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionAvianca.setText(String.valueOf(sb));
+        		
+    			
+    		}else if(TemporadaAvianca.getSelectionModel().getSelectedItem().equals("Temporada Baja")) {
+    			
+    			String ci = SalidasAvianca.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasAvianca.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceBavianca(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceBavianca(c1, c2);
+        		
+        		TotalAvianca.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionAvianca.setText(String.valueOf(sb));
+    		}
+    		
+    		
+    		
+    	}
 
     }
 
@@ -209,6 +281,75 @@ public class Controller implements Initializable{
 
     @FXML
     void calcularCopa(ActionEvent event) {
+    	
+
+    	String criterio = CriterioCopa.getSelectionModel().getSelectedItem();
+    	if(criterio.equals("Distancia")) {
+    		
+    		String ci = SalidasCopa.getSelectionModel().getSelectedItem();
+    		City c1 = new City(ci);
+    		ci = LlegadasCopa.getSelectionModel().getSelectedItem();
+    		City c2 = new City(ci);
+    		
+    		double distance = airport.getMinDistanceCopaAirlines(c1, c2);
+    		ArrayList<City> path = airport.getParentMinDidstnceCopaAirlines(c1, c2);
+
+    		TotalCopa.setText(String.valueOf(distance));
+    		StringBuilder sb = new StringBuilder();
+    		for(int i = 0; i < path.size(); i++) {
+    			sb.append(path.get(i).getName() + "-");
+    		}
+
+    		sb.append(LlegadasCopa.getSelectionModel().getSelectedItem());
+    		MejorOpcionCopa.setText(String.valueOf(sb));
+    		
+    	}else if(CriterioCopa.getValue().equals("Precio")) {
+    		
+    		
+    		if(TemporadaCopa.getSelectionModel().getSelectedItem().equals("Temporada Alta")) {
+    			
+    			String ci = SalidasCopa.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasCopa.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceACopaAirlines(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceACopaAirlines(c1, c2);
+        		
+        		TotalCopa.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionCopa.setText(String.valueOf(sb));
+    			
+    		}else if(TemporadaCopa.getSelectionModel().getSelectedItem().equals("Temporada Baja")) {
+    			
+    			String ci = SalidasCopa.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasCopa.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceBCopaAirlines(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceBCopaAirlines(c1, c2);
+        		
+        		TotalCopa.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionCopa.setText(String.valueOf(sb));
+    			
+    		}
+    		
+    		
+    	}
 
     }
 
@@ -223,6 +364,73 @@ public class Controller implements Initializable{
     @FXML
     void calcularLatam(ActionEvent event) {
 
+
+    	String criterio = CriterioLatam.getSelectionModel().getSelectedItem();
+    	if(criterio.equals("Distancia")) {
+    		
+    		String ci = SalidasLatam.getSelectionModel().getSelectedItem();
+    		City c1 = new City(ci);
+    		ci = LlegadasLatam.getSelectionModel().getSelectedItem();
+    		City c2 = new City(ci);
+    		
+    		double distance = airport.getMinDistanceLATAM(c1, c2);
+    		ArrayList<City> path = airport.getParentMinDidstnceLATAM(c1, c2);
+
+    		TotalLatam.setText(String.valueOf(distance));
+    		StringBuilder sb = new StringBuilder();
+    		for(int i = 0; i < path.size(); i++) {
+    			sb.append(path.get(i).getName() + "-");
+    		}
+
+    		sb.append(LlegadasLatam.getSelectionModel().getSelectedItem());
+    		MejorOpcionLatam.setText(String.valueOf(sb));
+    		
+    	}else if(CriterioLatam.getSelectionModel().getSelectedItem().equals("Precio")) {
+    		
+    		if(TemporadaLatam.getSelectionModel().getSelectedItem().equals("Temporada Alta")) {
+    			
+    			String ci = SalidasLatam.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasLatam.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceALATAM(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceALATAM(c1, c2);
+        		
+        		TotalLatam.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionLatam.setText(String.valueOf(sb));
+    			
+    		}else if(TemporadaLatam.getSelectionModel().getSelectedItem().equals("Temporada Baja")) {
+    			
+     			String ci = SalidasLatam.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasLatam.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceBLATAM(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceBLATAM(c1, c2);
+        		
+        		TotalLatam.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionLatam.setText(String.valueOf(sb));
+    			
+    		}
+    		
+    		
+    	}
     }
   
     
