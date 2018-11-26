@@ -55,4 +55,17 @@ class GraphLTest extends TestCase{
 		assertTrue(m == 0);
 	}
 
+	@Test 
+	public void testAddEdge() {
+		
+		stageOne();
+		
+		try {
+			graph.addEdge("re0", "re6", 8);
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	
 }

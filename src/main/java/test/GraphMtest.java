@@ -4,8 +4,9 @@ package test;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.Test;
 
-
+import interfaces.Tree;
 import junit.framework.TestCase;
 import matrix.GraphM;
 import matrix.NodeM;
@@ -101,7 +102,7 @@ class GraphMtest extends TestCase {
 		
 		double[][] g =  graph.floydWarshall();
 		
-		assertArrayEquals(m, g);
+		assertEquals(m, g);
 		
 		
 		}
@@ -135,16 +136,16 @@ class GraphMtest extends TestCase {
 	@Test 
 	public void testDFS() throws Exception  {
 		
-//		stageOne();
+		stageOne();
+		
+		ArrayList<String> m =  graph.DFS("re0");
+		
+		System.out.println(m.size());
 //		
-//		ArrayList<String> m =  graph.DFS("re0");
-//		
-//		System.out.println(m.size());
-////		
-//		String root = m.get(0);
-//		
-//		System.out.println(root);
-//		//assertEquals(root, "re0");
+		String root = m.get(0);
+		
+		System.out.println(root);
+		//assertEquals(root, "re0");
 		
 	}
 }

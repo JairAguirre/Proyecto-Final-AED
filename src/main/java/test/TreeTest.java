@@ -34,15 +34,12 @@ class TreeTest extends TestCase{
 		stageOne();
 		
 
-		String m =  tree.getRoot().getElem();
+		
 	
+		String root =  tree.getRoot().getElem();
 		
-		assertEquals(m, "10");
+		assertEquals(root, "10");
 	}
-	@Test
-	public void testPrint() {
-		
-		
-	}
+	
 	
 }
