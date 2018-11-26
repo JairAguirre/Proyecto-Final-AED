@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -19,20 +21,26 @@ import javafx.scene.image.ImageView;
 import model.*;
 
 public class Controller implements Initializable{
-	
-	//Links Avianca
-	private String linkAvBaja = "";
-	private String linkAvAlta = "";
-	
-	//Links Copa
-	private String linkCoBaja = "";
-	private String linkCoAlta = "";
-	
-	//Links Latam
-	private String linkLaBaja = "";
-	private String linkLaAlta = "";
-	
+
 	Airport airport = new Airport();
+	
+    @FXML
+    private Label unidadesLatam;
+    
+    @FXML
+    private Label unidadesCopa;
+    
+    @FXML
+    private Label unidadesAvianca;
+
+    @FXML
+    private Button CalcularLatamBut;
+    
+    @FXML
+    private Button CalcularCopaBut;
+    
+    @FXML
+    private Button CalcularAvBut;
 	
 	@FXML
     private Label llegadaAviancaTx;
@@ -180,206 +188,266 @@ public class Controller implements Initializable{
     
     public void open(String link) {
     	
-    	try {
-			Desktop.getDesktop().browse(new URI(link));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	Desktop enlace=Desktop.getDesktop();
+        try {
+                enlace.browse(new URI(link));
+        } catch (IOException | URISyntaxException e) {
+            System.out.println("Alv no sirvo");
+        }
     	
     }
     
     @FXML
-    public void comprarAv(ActionEvent event) {
-    	
-    	if(TemporadaLatam.getSelectionModel().getSelectedItem().equals("Temporada Baja")) {
-    		
-    		if(SalidasLatam.getSelectionModel().getSelectedItem().equals("Cali")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("San Andres")) {
-    				
-    				linkLaBaja = "https://www.despegar.com.co/checkout/9cc2e5037ae447b488f8ac7c84c25f88/form";
-    				open(linkLaBaja);
-    				
-    			} else {
-    				
-    				linkLaBaja = "https://www.despegar.com.co/checkout/822bd2cecbe94371beeded91e7249080/form";
-    				open(linkLaBaja);
-    				
-    			}
-    			
-    		} else if(SalidasLatam.getSelectionModel().getSelectedItem().equals("San Andres")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Cali")) {
-    				
-    				linkLaBaja = "https://www.despegar.com.co/checkout/822bd2cecbe94371beeded91e7249080/form";
-    				open(linkLaBaja);
-    				
-    				
-    			} else if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Medellin")) {
-    				
-    				
-    				
-    			} else if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    				
-    			} else if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Cartagena")) {
-    				
-    				
-    				
-    			}
-    			
+    void comprarAvianca(ActionEvent event) {
 
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Cucuta")) {
+    	String linkAvianca = "https://www.avianca.com/co/es/promociones/ofertas-vuelos-black-friday?gclid=CjwKCAiA0O7fBRASEiwAYI9QAjUvjhHCfdwhgMcrm0-uam4BrMYeDd_7fBvMv0Os-r0kEymfXuB7BhoC5O0QAvD_BwE&gclsrc=aw.ds";
+    	open(linkAvianca);
+    	
+    }
+
+    @FXML
+    void CalcularAvianca(ActionEvent event) {
+    	
+   
+    	String criterio = CriterioAvianca.getSelectionModel().getSelectedItem();
+    	if(criterio.equals("Distancia")) {
+    		
+    		String ci = SalidasAvianca.getSelectionModel().getSelectedItem();
+    		City c1 = new City(ci);
+    		ci = LlegadasAvianca.getSelectionModel().getSelectedItem();
+    		City c2 = new City(ci);
+    		
+    		double distance = airport.getMinDistanceAvianca(c1, c2);
+    		ArrayList<City> path = airport.getParentMinDidstnceAvianca(c1, c2);
+
+    		TotalAvianca.setText(String.valueOf(distance));
+    		StringBuilder sb = new StringBuilder();
+    		for(int i = 0; i < path.size(); i++) {
+    			sb.append(path.get(i).getName() + "-");
+    		}
+
+    		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+    		MejorOpcionAvianca.setText(String.valueOf(sb));
+    		
+    		unidadesAvianca.setText("Km");
+    		
+    	}else if(CriterioAvianca.getValue().equals("Precio")) {
+    		
+    		
+    		if(TemporadaAvianca.getSelectionModel().getSelectedItem().equals("Temporada Alta")) {
     			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			}
+    			String ci = SalidasAvianca.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasAvianca.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceAavianca(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceAavianca(c1, c2);
+        		
+        		TotalAvianca.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionAvianca.setText(String.valueOf(sb));
+        		
     			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Pereira")) {
+    		}else if(TemporadaAvianca.getSelectionModel().getSelectedItem().equals("Temporada Baja")) {
     			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Yopal")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Bucaramanga")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Cucuta")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Valledupar")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Barranquilla")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Monteria")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Cartagena")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Medellin")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Leticia")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Santa Marta")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Medellin")) {
-    				
-    				
-    			}
-    			
-    		} else if (SalidasLatam.getSelectionModel().getSelectedItem().equals("Bogota")) {
-    			
-    			if(LlegadasLatam.getSelectionModel().getSelectedItem().equals("Leticia")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Cali")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Pereira")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Medellin")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("San Andres")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Monteria")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Cartagena")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Barranquilla")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Santa Marta")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Valledupar")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Cucuta")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Bucaramanga")) {
-    				
-    				
-    			} else if (LlegadasLatam.getSelectionModel().getSelectedItem().equals("Yopal")) {
-    				
-    				
-    			}
-    			
+    			String ci = SalidasAvianca.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasAvianca.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceBavianca(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceBavianca(c1, c2);
+        		
+        		TotalAvianca.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionAvianca.setText(String.valueOf(sb));
     		}
     		
-    		
+    		unidadesAvianca.setText("Pesos");
     		
     	}
 
     }
-    
-    
 
     @FXML
-    void comprarCo(ActionEvent event) {
+    void comprarCopa(ActionEvent event) {
+    	
+    	String linkCopa = "https://www.copaair.com/es/web/CO?d1=GS:es-CO_BR%5CModifiers%2FGeo@CO%26%26GS:es-CO_BR%5CModi%3DCM%2FEX@Travel.txt&gclid=CjwKCAiA0O7fBRASEiwAYI9QAlCjd0Fixx-2P0aqc3L4Q__tUPAZrD9moRViac-U9_aKx6lmxpj7RhoCX6EQAvD_BwE";
+    	open(linkCopa);
+    	
+    }
+
+    @FXML
+    void calcularCopa(ActionEvent event) {
+    	
+
+    	String criterio = CriterioCopa.getSelectionModel().getSelectedItem();
+    	if(criterio.equals("Distancia")) {
+    		
+    		String ci = SalidasCopa.getSelectionModel().getSelectedItem();
+    		City c1 = new City(ci);
+    		ci = LlegadasCopa.getSelectionModel().getSelectedItem();
+    		City c2 = new City(ci);
+    		
+    		double distance = airport.getMinDistanceCopaAirlines(c1, c2);
+    		ArrayList<City> path = airport.getParentMinDidstnceCopaAirlines(c1, c2);
+
+    		TotalCopa.setText(String.valueOf(distance));
+    		StringBuilder sb = new StringBuilder();
+    		for(int i = 0; i < path.size(); i++) {
+    			sb.append(path.get(i).getName() + "-");
+    		}
+
+    		sb.append(LlegadasCopa.getSelectionModel().getSelectedItem());
+    		MejorOpcionCopa.setText(String.valueOf(sb));
+    		
+    		unidadesCopa.setText("Km");
+    		
+    	}else if(CriterioCopa.getValue().equals("Precio")) {
+    		
+    		
+    		if(TemporadaCopa.getSelectionModel().getSelectedItem().equals("Temporada Alta")) {
+    			
+    			String ci = SalidasCopa.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasCopa.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceACopaAirlines(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceACopaAirlines(c1, c2);
+        		
+        		TotalCopa.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionCopa.setText(String.valueOf(sb));
+    			
+    		}else if(TemporadaCopa.getSelectionModel().getSelectedItem().equals("Temporada Baja")) {
+    			
+    			String ci = SalidasCopa.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasCopa.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceBCopaAirlines(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceBCopaAirlines(c1, c2);
+        		
+        		TotalCopa.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionCopa.setText(String.valueOf(sb));
+    			
+    		}
+    		
+    		unidadesCopa.setText("Pesos");
+    	}
 
     }
 
     @FXML
-    void comprarLa(ActionEvent event) {
+    void comprarLatam(ActionEvent event) {
+    	
+    	String linkLatam = "https://www.latam.com/es_co/promociones/cyber-latam/?gclid=CjwKCAiA0O7fBRASEiwAYI9QAp-VtccZJgD63WY6HiRFnwG5vPzFcKRGbzJ36Jz7GwGDIg7wK7bgVhoCc04QAvD_BwE&gclsrc=aw.ds";
+    	open(linkLatam);
 
     }
 
+    @FXML
+    void calcularLatam(ActionEvent event) {
+
+
+    	String criterio = CriterioLatam.getSelectionModel().getSelectedItem();
+    	if(criterio.equals("Distancia")) {
+    		
+    		String ci = SalidasLatam.getSelectionModel().getSelectedItem();
+    		City c1 = new City(ci);
+    		ci = LlegadasLatam.getSelectionModel().getSelectedItem();
+    		City c2 = new City(ci);
+    		
+    		double distance = airport.getMinDistanceLATAM(c1, c2);
+    		ArrayList<City> path = airport.getParentMinDidstnceLATAM(c1, c2);
+
+    		TotalLatam.setText(String.valueOf(distance));
+    		StringBuilder sb = new StringBuilder();
+    		for(int i = 0; i < path.size(); i++) {
+    			sb.append(path.get(i).getName() + "-");
+    		}
+
+    		sb.append(LlegadasLatam.getSelectionModel().getSelectedItem());
+    		MejorOpcionLatam.setText(String.valueOf(sb));
+    		
+    		unidadesLatam.setText("Km");
+    		
+    	}else if(CriterioLatam.getSelectionModel().getSelectedItem().equals("Precio")) {
+    		
+    		if(TemporadaLatam.getSelectionModel().getSelectedItem().equals("Temporada Alta")) {
+    			
+    			String ci = SalidasLatam.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasLatam.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceALATAM(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceALATAM(c1, c2);
+        		
+        		TotalLatam.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionLatam.setText(String.valueOf(sb));
+    			
+    		}else if(TemporadaLatam.getSelectionModel().getSelectedItem().equals("Temporada Baja")) {
+    			
+     			String ci = SalidasLatam.getSelectionModel().getSelectedItem();
+        		City c1 = new City(ci);
+        		ci = LlegadasLatam.getSelectionModel().getSelectedItem();
+        		City c2 = new City(ci); 
+        		
+        		double precio = airport.getMinPriceBLATAM(c1, c2);
+        		LinkedList<City> path = airport.getParentMinPriceBLATAM(c1, c2);
+        		
+        		TotalLatam.setText(String.valueOf(precio));
+        		
+        		StringBuilder sb = new StringBuilder();
+        		for(int i = 0; i < path.size(); i++) {
+        			sb.append(path.get(i).getName() + "-");
+        		}
+
+        //		sb.append(LlegadasAvianca.getSelectionModel().getSelectedItem());
+        		MejorOpcionLatam.setText(String.valueOf(sb));
+    			
+    		}
+    		
+    		unidadesLatam.setText("Pesos");
+    	}
+    }
+  
     
     public void initBoxes() {
     	
@@ -444,6 +512,8 @@ public class Controller implements Initializable{
 		ImgCopa.setImage(imagen3);
 		
 		initBoxes();
+//		Airport a = new Airport();
+//		TotalCopa.setText(String.valueOf(a.getMinDistanceAvianca(new City("Bogotá"), new City("Cali"))));
 	}
     
   

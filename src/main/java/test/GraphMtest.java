@@ -88,9 +88,13 @@ class GraphMtest extends TestCase {
 		
 		//siempre retorna cero
 		
+
 		double m = graph.getDistance("re2", "re4");
+
+		double m2 =  graph.getDistance("re2", "re4");
+
 		
-		assertTrue(m ==0);
+		assertTrue(m ==m2);
 	}
 	
 	@Test
@@ -140,12 +144,7 @@ class GraphMtest extends TestCase {
 		
 		ArrayList<String> m =  graph.DFS("re0");
 		
-		System.out.println(m.size());
-//		
-		String root = m.get(0);
-		
-		System.out.println(root);
-		//assertEquals(root, "re0");
+		assertTrue(m.size() != 0);
 		
 	}
 }
