@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Airport {
 	
@@ -197,6 +198,28 @@ public class Airport {
 		return LATAM.getMinDistance(c1, c2);
 	}
 
+	
+	public double getMinPriceAavianca(City c1, City c2) {
+		return avianca.getMinPriceA(c1, c2);
+	}
+	public double getMinPriceACopaAirlines(City c1, City c2) {
+		return CopaAirlines.getMinPriceA(c1, c2);
+	}
+	public double getMinPriceALATAM(City c1, City c2) {
+		return LATAM.getMinPriceA(c1, c2);
+	}
+	
+	
+	public double getMinPriceBavianca(City c1, City c2) {
+		return avianca.getMinPriceB(c1, c2);
+	}
+	public double getMinPriceBCopaAirlines(City c1, City c2) {
+		return CopaAirlines.getMinPriceB(c1, c2);
+	}
+	public double getMinPriceBLATAM(City c1, City c2) {
+		return LATAM.getMinPriceB(c1, c2);
+	}
+	
 	//caminos
 	public ArrayList<City> getParentMinDidstnceAvianca(City c1, City c2){
 		return avianca.getParentMinDidstnce(c1, c2);
@@ -206,6 +229,28 @@ public class Airport {
 	}
 	public ArrayList<City> getParentMinDidstnceLATAM(City c1, City c2){
 		return LATAM.getParentMinDidstnce(c1, c2);
+	}
+	
+	
+	public LinkedList<City> getParentMinPriceAavianca(City c1, City c2){
+		return  avianca.getParentMinPriceA(c1, c2);
+	}
+	public LinkedList<City> getParentMinPriceACopaAirlines(City c1, City c2){
+		return  CopaAirlines.getParentMinPriceA(c1, c2);
+	}
+	public LinkedList<City> getParentMinPriceALATAM(City c1, City c2){
+		return  LATAM.getParentMinPriceA(c1, c2);
+	}
+	
+	
+	public LinkedList<City> getParentMinPriceBavianca(City c1, City c2){
+		return  avianca.getParentMinPriceB(c1, c2);
+	}
+	public LinkedList<City> getParentMinPriceBCopaAirlines(City c1, City c2){
+		return  CopaAirlines.getParentMinPriceB(c1, c2);
+	}
+	public LinkedList<City> getParentMinPriceBLATAM(City c1, City c2){
+		return  LATAM.getParentMinPriceB(c1, c2);
 	}
 	
 	//ciudades

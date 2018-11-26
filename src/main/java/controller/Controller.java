@@ -444,6 +444,8 @@ public class Controller implements Initializable{
 		ImgCopa.setImage(imagen3);
 		
 		initBoxes();
+//		Airport a = new Airport();
+//		TotalCopa.setText(String.valueOf(a.getMinDistanceAvianca(new City("Bogotá"), new City("Cali"))));
 	}
     
   
